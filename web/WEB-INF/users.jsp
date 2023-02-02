@@ -75,11 +75,11 @@
                     Role:  
                     <select name="role">
                         <option value="2">regular user</option>
-                        <option value="1" ${selecteduser.role.roleID == '1' ? 'selected' : ''}>
+                        <option value="1" ${selecteduser.role.roleId == '1' ? 'selected' : ''}>
                             system admin
                         </option>
                     </select><br>
-                    <input type="hidden" name="role" value="${selecteduser.role.roleID}">
+                    <input type="hidden" name="role" value="${selecteduser.role.roleId}">
                     <input type="submit" name="action" value="Update">
                     <input type="submit" name ="action" value="Cancel">
                     ${formmessage}

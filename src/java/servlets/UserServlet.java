@@ -71,8 +71,8 @@ public class UserServlet extends HttpServlet {
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
         String password = request.getParameter("password");
-        String roleID = request.getParameter("role");
-        String[] params = {email,firstName,lastName,password,roleID};
+        String roleId = request.getParameter("role");
+        String[] params = {email,firstName,lastName,password,roleId};
 
         try {
             Boolean formMessageSet = false;
@@ -99,12 +99,12 @@ public class UserServlet extends HttpServlet {
                     .forward(request, response); 
                 return;
             }
-            switch (action.toString()) {
+            switch (action) {
                 case "Add user":
-                    us.insert(email, firstName, lastName, password, Integer.parseInt(roleID));
+                    us.insert(email, firstName, lastName, password, Integer.parseInt(roleId));
                     break;
                 case "Update":
-                    us.update(email, firstName, lastName, password, Integer.parseInt(roleID));
+                    us.update(email, firstName, lastName, password, Integer.parseInt(roleId));
                     session.setAttribute("selecteduser", null);
             }
             users = us.getAll();

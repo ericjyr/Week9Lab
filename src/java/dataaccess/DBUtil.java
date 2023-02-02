@@ -1,33 +1,18 @@
 package dataaccess;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
- *
+ * For retrieving a EntityManagerFactory that is used to create
+ * EntityManager object
  * @author ericr
  */
 public class DBUtil {
-    
-        //easier to use, prevents excess try catch blocks
-        public static void closePreparedStatement(Statement ps) {
-        try {
-            if (ps != null) {
-                ps.close();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
+    private static final EntityManagerFactory emf =
+        Persistence.createEntityManagerFactory("UserPU");
 
-    public static void closeResultSet(ResultSet rs) {
-        try {
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
+    public static EntityManagerFactory getEmFactory() {
+        return emf;
     }
 }
