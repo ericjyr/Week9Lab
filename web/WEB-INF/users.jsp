@@ -58,7 +58,7 @@
                     </select><br>
 
 
-                    <input type="submit" name="action" value="Add user">
+                    <input type="submit" name="submit" value="Add user">
                 </form>
                 ${formmessage}
             </c:when>    
@@ -80,8 +80,8 @@
                         </option>
                     </select><br>
                     <input type="hidden" name="role" value="${selecteduser.role.roleId}">
-                    <input type="submit" name="action" value="Update">
-                    <input type="submit" name ="action" value="Cancel">
+                    <input type="submit" name="submit" value="Update">
+                    <input type="submit" name ="submit" value="Cancel">
                     ${formmessage}
                 </form>         
 
